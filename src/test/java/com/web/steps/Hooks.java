@@ -1,16 +1,22 @@
 package com.web.steps;
 
+import com.qz.factory.WebDriverFactory;
+import com.tests.runners.WebRunner;
 import io.cucumber.java.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static com.qz.factory.WebDriverFactory.*;
 
 public class Hooks {
+    public static WebDriver driver;
     @BeforeAll
     public static void initializingReportDrivers(){
-      //  System.out.println("initializingReportDrivers");
+        initializeDriver();
     }
 
     @Before
     public static void launchApplication(){
-        System.out.println("launchApplication");
+        openApp();
     }
 
     @BeforeStep
@@ -30,6 +36,6 @@ public class Hooks {
 
     @AfterAll
     public static void killSession(){
-      //  System.out.println("killSession");
+        killWebDriver();
     }
 }

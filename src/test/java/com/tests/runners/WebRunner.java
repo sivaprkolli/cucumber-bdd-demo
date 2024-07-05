@@ -6,9 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/login_test.feature",
+        features = "src/test/resources/features",
         glue="com.web.steps",
-        tags = "@LT6"
+        tags = "@SE1",
+        plugin = "pretty"
 )
 public class WebRunner {
 }
